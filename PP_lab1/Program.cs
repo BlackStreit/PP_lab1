@@ -23,7 +23,7 @@ internal class Program
         Random random = new Random();
         for (int i = 0; i < array.Length; i++)
         {
-            array[i] = random.Next(-1000, 1000);
+            array[i] = random.Next(-10000, 10000);
         }
         double[] returns = new double[threadCount];
         Thread[] threadAvarange = new Thread[threadCount];
@@ -35,7 +35,7 @@ internal class Program
             threadAvarange[i].Join();
 
         }
-        Console.WriteLine(returns.Average());
+        Console.WriteLine($"Среднее значение массива: {returns.Average()}");
         Console.ReadKey();
     }
 
