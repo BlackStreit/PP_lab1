@@ -29,11 +29,12 @@ internal class Program
         Thread[] threadAvarange = new Thread[threadCount];
         for (int i = 0; i < threadAvarange.Length; i++)
         {
-
             threadAvarange[i] = new Thread(() => { returns[i] = (ThreadArray(array, i, threadCount)); });
             threadAvarange[i].Start();
+        }
+        for (int i = 0; i < threadAvarange.Length; i++)
+        {
             threadAvarange[i].Join();
-
         }
         Console.WriteLine($"Среднее значение массива: {returns.Average()}");
         Console.ReadKey();
